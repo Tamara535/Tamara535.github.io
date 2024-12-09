@@ -1,0 +1,89 @@
+
+body, h1, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+
+header {
+    background: #333;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+header nav ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #00bcd4;
+}
+
+
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #00bcd4, #2196f3);
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+.welcome h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.welcome p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.btn {
+    background: #fff;
+    color: #2196f3;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+.btn:hover {
+    background: #2196f3;
+    color: #fff;
+}
+
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome h1 {
+        font-size: 2rem;
+    }
+    .welcome p {
+        font-size: 1rem;
+    }
+}
+
