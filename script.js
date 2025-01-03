@@ -29,3 +29,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Scroll Indicator
+window.addEventListener("scroll", () => {
+    const scrollIndicator = document.getElementById("scroll-indicator");
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    scrollIndicator.style.width = `${progress}%`;
+});
