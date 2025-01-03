@@ -37,3 +37,14 @@ window.addEventListener("scroll", () => {
     const progress = (window.scrollY / totalHeight) * 100;
     scrollIndicator.style.width = `${progress}%`;
 });
+const animatedElements = document.querySelectorAll('.animate');
+
+window.addEventListener('scroll', () => {
+    animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            el.classList.add('visible');
+        }
+    });
+});
+

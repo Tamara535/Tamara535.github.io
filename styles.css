@@ -277,3 +277,13 @@ footer {
     z-index: 9999;
     transition: width 0.1s ease-out;
 }
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
