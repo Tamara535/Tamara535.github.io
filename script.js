@@ -81,3 +81,18 @@ document.querySelector('.btn').addEventListener('click', function (e) {
     document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
 });
 
+const modal = document.getElementById('project-modal');
+const modalImg = document.getElementById('modal-image');
+const modalCaption = document.getElementById('modal-caption');
+
+document.querySelectorAll('.project img').forEach(img => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        modalCaption.textContent = img.alt;
+    });
+});
+
+document.querySelector('.close').addEventListener('click', () => {
+    modal.style.display = 'none';
+});
