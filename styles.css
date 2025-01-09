@@ -266,7 +266,7 @@ footer {
     }
 }
 
-/* Scroll Indicator */
+
 #scroll-indicator {
     position: fixed;
     top: 0;
@@ -282,8 +282,214 @@ footer {
     transform: translateY(50px);
     transition: all 0.8s ease-in-out;
 }
+.slider {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+}
 
-.animate.visible {
-    opacity: 1;
-    transform: translateY(0);
+.slide {
+    flex: 0 0 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+#scroll-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff6f61;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+#scroll-arrow .arrow {
+    font-size: 1.5rem;
+}
+
+#scroll-arrow:hover {
+    background-color: #e0554d;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+.cta-btn {
+    background: linear-gradient(45deg, #ff6f61, #e0554d);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #e0554d, #ff6f61);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#home {
+    background: linear-gradient(135deg, #007BFF, #00C9FF, #007BFF);
+    background-size: 200% 200%;
+    animation: gradientAnimation 6s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+.hero-container {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+#home {
+    background: radial-gradient(circle, #0056b3, #007bff, #0056b3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+#contact {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 60px 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+    text-align: left;
+}
+
+.contact-container h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #0056b3;
+    text-align: center;
+}
+
+.contact-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.personal-info, .contact-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.personal-info h3, .contact-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+    text-transform: uppercase;
+}
+
+.personal-info p, .contact-info p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.personal-info p strong, .contact-info p strong {
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.contact-container span {
+    font-style: italic;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+    }
+
+    .personal-info, .contact-info {
+        padding: 15px;
+    }
+
+    .personal-info h3, .contact-info h3 {
+        font-size: 1.4rem;
+    }
 }
