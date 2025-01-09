@@ -107,3 +107,41 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 projects.forEach(project => observer.observe(project));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const images = document.querySelectorAll('.project img');
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        currentIndex = index;
+    });
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+});
+
+document.querySelector('.close').addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+const progressBar = document.createElement('div');
+progressBar.id = 'progress-bar';
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = `${scrollPercent}%`;
+});
+
+ 
