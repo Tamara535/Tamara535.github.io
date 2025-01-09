@@ -697,3 +697,11 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
 }
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.project img {
+    max-height: 200px;
+    object-fit: cover;
+}
