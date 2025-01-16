@@ -143,8 +143,5 @@ window.addEventListener('scroll', () => {
     const scrollPercent = (scrollTop / docHeight) * 100;
     progressBar.style.width = `${scrollPercent}%`;
 });
-document.getElementById("theme-toggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-});
 
  
